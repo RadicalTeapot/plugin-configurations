@@ -1,11 +1,11 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    lazy = true,
-    event = { "BufReadPre", "BufNewFile" },
+    -- Disable lazy loading as it might cause some issues with runtime path order when loading query.lua, figure out if it can be avoided
+    lazy = false,
     opts = {
-        -- Add markdown support
-        ensure_installed = { "markdown", "markdown_inline", "lua", "luadoc", "supercollider" },
+        -- First 5 have to be installed for treesitter to function properly
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "luadoc", "supercollider" },
         -- Disable auto-install (add required packages above and run :TSUpdate instead)
         auto_install = false,
         sync_install = true,
