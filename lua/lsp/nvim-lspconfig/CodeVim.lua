@@ -12,7 +12,8 @@ return {
                     },
                     workspace = {
                         library = {
-                            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                            -- [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                            vim.env.RUNTIME,
                         },
                     },
                     runtime = {
@@ -21,9 +22,12 @@ return {
                     },
                 },
             },
+            root_dir = function()
+                return vim.fn.getcwd()
+            end,
         })
         lspconfig.powershell_es.setup({})
-        lspconfig.omnisharp.setup({})
+        lspconfig.omnisharp.setup({}) -- Check https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#omnisharp for setup instructions
         lspconfig.tsserver.setup({})
 
         vim.api.nvim_create_autocmd("LspAttach", {
