@@ -5,7 +5,7 @@ return {
     lazy = true,
     keys = {
         {
-            "<Leader>bf",
+            "<Leader>bl",
             function()
                 require("lint").try_lint()
             end,
