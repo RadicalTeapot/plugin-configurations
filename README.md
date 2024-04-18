@@ -7,6 +7,7 @@ Plugin configurations for Neovim, using [Lazy.nvim](https://github.com/folke/laz
 Create a new directory containing the plugin name (usually under a more general directory, e.g. `ui/colorscheme`) inside the `lua` folder.
 
 These guidelines are then used to name and fill the files within that folder:
+
 - `init.lua` file is the configuration that will be loaded when the plugin is loaded.
 - `default.lua` is the default override for the plugin
 - Any other lua file might be loaded based on the options passed to the `plugin-configuration-loader`.

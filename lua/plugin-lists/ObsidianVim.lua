@@ -10,6 +10,8 @@ return {
     "plugins.neotree",
     "plugins.obsidian-nvim",
     "plugins.oil-nvim",
+    "plugins.leap",
+    "plugins.mini",
     "plugins.personal_config",
     "plugins.telescope",
     "plugins.which-key",
