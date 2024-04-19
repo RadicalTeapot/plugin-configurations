@@ -5,7 +5,6 @@ return {
             "csharpier",
             "stylua",
             "prettier",
-            "prettierd",
         },
     },
 }

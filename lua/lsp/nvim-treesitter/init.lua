@@ -5,7 +5,7 @@ return {
     lazy = false,
     opts = {
         -- First 5 have to be installed for treesitter to function properly
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "luadoc", "supercollider" },
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query" --[[, "supercollider" --]] },
         -- Disable auto-install (add required packages above and run :TSUpdate instead)
         auto_install = false,
         sync_install = true,

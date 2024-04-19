@@ -2,8 +2,8 @@ return {
     opts = {
         formatters_by_ft = {
             lua = { "stylua" },
-            typescript = { { "prettier", "prettierd" } },
-            markdown = { { "prettier", "prettierd" } },
+            typescript = { "prettier" },
+            markdown = { "prettier" },
             cs = { "csharpier" },
         },
         formatters = {
