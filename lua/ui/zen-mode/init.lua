@@ -50,7 +50,7 @@ return {
 
         on_open = function()
             local overriden_settings = {
-                { key = { type = "wo", option = "colorcolumn" }, overriden_value = 0 },
+                { key = { type = "wo", option = "colorcolumn" }, overriden_value = "" },
                 { key = { type = "bo", option = "textwidth" }, overriden_value = 0 },
             }
             settings_stack.push(overriden_settings)
