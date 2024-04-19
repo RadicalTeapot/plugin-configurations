@@ -25,5 +25,6 @@ return {
     "ui.twilight",
     "ui.vim-illuminate",
     "ui.virt-column",
+    "ui.wrapwidth",
     "ui.zen-mode",
 }
