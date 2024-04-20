@@ -1,6 +1,6 @@
 return {
     "mfussenegger/nvim-lint",
-    dependencies = { "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim", },
+    dependencies = { "williamboman/mason-lspconfig.nvim", "WhoIsSethDaniel/mason-tool-installer.nvim" },
     event = { "BufNewFile", "BufReadPre" },
     lazy = true,
     keys = {

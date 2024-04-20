@@ -5,6 +5,6 @@ return {
     opts = {
         indent = {
             char = "▏",
-        }
-    }
+        },
+    },
 }

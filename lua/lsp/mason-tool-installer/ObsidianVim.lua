@@ -1,5 +1,5 @@
 return {
-        opts = {
-            ensure_installed = { "markdownlint", "prettier", },
-        },
+    opts = {
+        ensure_installed = { "markdownlint", "prettier" },
+    },
 }

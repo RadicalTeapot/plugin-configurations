@@ -3,5 +3,5 @@ return {
     config = function()
         local lint = require("lint")
         utils.set_autocmd()
-    end
+    end,
 }
