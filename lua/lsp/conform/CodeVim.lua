@@ -3,7 +3,7 @@ return {
         formatters_by_ft = {
             lua = { "stylua" },
             typescript = { "prettier" },
-            markdown = { "prettier" },
+            markdown = { { "markdownlint", "prettier"  }},
             cs = { "csharpier" },
         },
         formatters = {
