@@ -43,6 +43,8 @@ return {
         completion = { nvim_cmp = true, min_chars = 2 },
         -- TODO Override mappings
 
+        ui = { enable = false },
+
         note_frontmatter_func = function(note)
             local client = require("obsidian").get_client()
             local workspace = client.current_workspace
