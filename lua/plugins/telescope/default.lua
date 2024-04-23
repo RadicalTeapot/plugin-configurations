@@ -1,5 +1,5 @@
 return {
-    event = "VeryLazy",
+    cmd = "Telescope",
     keys = function()
         local builtin = require("telescope.builtin")
         return {

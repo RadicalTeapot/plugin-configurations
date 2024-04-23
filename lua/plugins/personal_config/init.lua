@@ -1,13 +1,12 @@
-local personal_config = vim.fs.normalize("$localappdata/_nvim_personal_config/personal_config")
+local personal_config = vim.fs.normalize("$code/neovim/plugins/personal-basics-nvim")
 if (vim.uv or vim.loop).fs_stat(personal_config) then
     return {
         dir = personal_config,
+        event = "VeryLazy",
         opts = {
             statusline = false,
-            keymaps = true,
+            colorscheme = false,
         },
-        priority = 999,
-        lazy = false,
     }
 end
 
