@@ -1,6 +1,17 @@
 local vaultPath = vim.fn.expand([[$data/Obsidian vaults/Personal vault]])
 local notesPath = vim.fs.normalize(vaultPath .. [[/**.md]])
 
+local function extract_type_name(input)
+    local pattern = "^%d+ (%w+)$" -- Match any 1 or more digits followed by a single space and 1 or more word characters
+    local _, _, group = string.find(input, pattern)
+
+    if group then
+        return group
+    else
+        return nil
+    end
+end
+
 local get_PARA_metadata = function(relative_note_path)
     local parents = relative_note_path:parents()
 
@@ -10,9 +21,9 @@ local get_PARA_metadata = function(relative_note_path)
     end
 
     -- Match against PARA types
-    type_name = string.lower(tostring(type_name["stem"]))
+    type_name = extract_type_name(string.lower(tostring(type_name["stem"])))
     local types = { project = "project", area = "area", resource = "resource", archive = "archive" }
-    if types[type_name] == nil then
+    if not type_name or not types[type_name] then
         return nil
     end
 
@@ -35,7 +46,7 @@ return {
     opts = {
         workspaces = { { name = "vault", path = vaultPath } },
         daily_notes = {
-            folder = "Periodic notes/daily",
+            folder = "01 Periodic notes/daily",
             date_format = "%Y-%m-%d",
             -- TODO Add template
         },

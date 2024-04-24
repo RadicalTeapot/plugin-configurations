@@ -7,23 +7,49 @@ return {
     cmd = { "Ollama", "OllamaModel", "OllamaServe", "OllamaServeStop" },
 
     keys = {
-        -- Sample keybind for prompt menu. Note that the <c-u> is important for selections to work properly.
         {
-            "<leader>oo",
-            ":<c-u>lua require('ollama').prompt()<cr>",
-            desc = "ollama prompt",
+            "<leader>op",
+            function () require('ollama').prompt() end, -- Same as Ollama command
+            desc = "[O]llama [p]rompt",
             mode = { "n", "v" },
         },
 
-        -- Sample keybind for direct prompting. Note that the <c-u> is important for selections to work properly.
         {
-            "<leader>oG",
-            ":<c-u>lua require('ollama').prompt('Generate_Code')<cr>",
-            desc = "ollama Generate Code",
+            "<leader>om",
+            function() require('ollama').choose_model() end, -- Same as OllamaModel command
+            desc = "[O]llama [m]odel",
+            mode = { "n", "v" },
+        },
+
+        {
+            "<leader>oe",
+            function() require('ollama').prompt('Raw') end,
+            desc = "[O]llama prompt [E]mpty",
+            mode = { "n", "v" },
+        },
+
+        {
+            "<leader>or",
+            function() require('ollama').prompt('Rephrase_in_style_of') end,
+            desc = "[O]llama prompt [R]ephrase",
+            mode = { "n", "v" },
+        },
+
+        {
+            "<leader>og",
+            function() require('ollama').prompt('Generate_Code') end,
+            desc = "[O]llama prompt [g]enerate code",
             mode = { "n", "v" },
         },
     },
     opts = {
         model = "phi3",
+
+        prompts = {
+            Rephrase_in_style_of = {
+                prompt = "Rephrase the following:\n\n$sel\n\n in the style of $input",
+                input_label = "Rephrase style: "
+            }
+        }
     }
 }
