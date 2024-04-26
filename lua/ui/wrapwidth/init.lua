@@ -31,7 +31,7 @@ return {
         wrap_on()
     end,
     keys = {
-        { "<Leader>bwe", wrap_on, desc = "[B]uffer [w]rap [e]nabled" },
-        { "<Leader>bwd", wrap_off, desc = "[B]uffer [w]rap [d]isabled" },
+        { "<Leader>we", wrap_on, desc = "[W]rap [e]nabled" },
+        { "<Leader>wd", wrap_off, desc = "[W]rap [d]isabled" },
     },
 }
