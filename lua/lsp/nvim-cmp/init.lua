@@ -1,9 +1,10 @@
 return {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths in commands
-    "saadparwaiz1/cmp_luasnip", -- for lua autocompletion
+    "saadparwaiz1/cmp_luasnip", -- for Lua autocompletion
     "rafamadriz/friendly-snippets", -- useful snippet library
     "hrsh7th/cmp-nvim-lsp", -- source file for LSP
+    "hrsh7th/cmp-nvim-lua", -- source file for Neovim Lua functions
 
     {
         "L3MON4D3/LuaSnip", -- snippet engine
@@ -23,6 +24,7 @@ return {
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",
@@ -53,6 +55,7 @@ return {
                 -- Set autocompletion sources
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
+                    { name = "nvim_lua" },
                     { name = "luasnip" }, -- snippets
                     { name = "buffer" }, -- text within current buffer
                     { name = "path" }, -- file system paths
