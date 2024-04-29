@@ -13,7 +13,7 @@ return {
                     workspace = {
                         library = {
                             -- [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                            vim.env.RUNTIME,
+                            vim.env.VIMRUNTIME,
                         },
                     },
                     runtime = {
