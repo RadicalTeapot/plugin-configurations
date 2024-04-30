@@ -19,6 +19,7 @@ return {
     "ui.dressing",
     "ui.headlines",
     "ui.indent-blanklines",
+    "ui.log-highlighter",
     "ui.lualine",
     "ui.twilight",
     "ui.vim-illuminate",
