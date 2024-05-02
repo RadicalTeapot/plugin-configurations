@@ -54,7 +54,16 @@ return {
         completion = { nvim_cmp = true, min_chars = 2 },
         -- TODO Override mappings
 
-        ui = { enable = false },
+        ui = {
+            enable = false,
+            checkboxes = {
+                [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+                ["x"] = { char = "", hl_group = "ObsidianDone" },
+                [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+                ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+                ["/"] = { char = "󰟃", hl_group = "ObsidianTilde" },
+            },
+        },
 
         note_frontmatter_func = function(note)
             local client = require("obsidian").get_client()
