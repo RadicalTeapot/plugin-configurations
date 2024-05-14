@@ -34,6 +34,7 @@ if (vim.uv or vim.loop).fs_stat(path) then
         keys = {
             { "<Leader>wd", "<cmd>DimWindowsOn<cr>", desc = "[W]indow [d]im enabled" },
             { "<Leader>wD", "<cmd>DimWindowsOff<cr>", desc = "[W]indow [d]im disabled" },
+            { "gh", "<cmd>JumpToMarkdownHeader<cr>", desc = "Jump to Markdown [h]eader" },
         },
         cmd = {
             "OpenDailyNote",
@@ -43,6 +44,7 @@ if (vim.uv or vim.loop).fs_stat(path) then
             "SendToPandoc",
             "DimWindowsOn",
             "DimWindowsOff",
+            "JumpToMarkdownHeader",
         },
         config = true,
     })
