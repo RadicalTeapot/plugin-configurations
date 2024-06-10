@@ -7,6 +7,7 @@ return {
     "lsp.nvim-lint",
     "lsp.nvim-lspconfig",
     "lsp.nvim-treesitter",
+    -- "lsp.nvim-treesitter-textobjects",
     "plugins.leap",
     "plugins.mini",
     "plugins.neotree",

@@ -20,7 +20,7 @@ return {
             -- uses :h syntax if true, disabled due to potential slowdown
             additional_vim_regex_highlighting = false,
         },
-        indent = { true },
+        indent = { enable = true },
     },
     config = function(_, opts)
         -- This is required (lazy won't call setup on the right object by itself)
