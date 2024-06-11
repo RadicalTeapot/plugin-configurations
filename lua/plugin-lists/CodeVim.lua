@@ -7,6 +7,7 @@ return {
     "lsp.nvim-lint",
     "lsp.nvim-lspconfig",
     "lsp.nvim-treesitter",
+    "plugins.codeium",
     "plugins.leap",
     "plugins.mini",
     "plugins.neotree",
