@@ -7,7 +7,6 @@ return {
     "lsp.nvim-lint",
     "lsp.nvim-lspconfig",
     "lsp.nvim-treesitter",
-    -- "lsp.nvim-treesitter-textobjects",
     "plugins.leap",
     "plugins.mini",
     "plugins.neotree",
@@ -27,6 +26,8 @@ return {
     "ui.virt-column",
     "ui.wrapwidth",
     "ui.zen-mode",
+    -- "lsp.nvim-treesitter-textobjects",
+    -- "plugins.hologram-nvim",
     -- "ui.nivm-notify",
     -- "ui.noice",
 }
