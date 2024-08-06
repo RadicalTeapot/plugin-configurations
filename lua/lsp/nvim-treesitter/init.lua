@@ -10,7 +10,7 @@ return {
             "lua",
             "vim",
             "vimdoc",
-            "query" --[[, "supercollider" --]],
+            "query",
         },
         -- Disable auto-install (add required packages above and run :TSUpdate instead)
         auto_install = false,

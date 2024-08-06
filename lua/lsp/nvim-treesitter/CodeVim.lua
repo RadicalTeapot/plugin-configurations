@@ -11,6 +11,7 @@ return {
             "luadoc",
             "markdown",
             "markdown_inline",
+            "supercollider",
         },
     },
 }
