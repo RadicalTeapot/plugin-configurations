@@ -74,7 +74,7 @@ return {
 
         lspconfig.marksman.setup({})
         lspconfig.powershell_es.setup({})
-        lspconfig.tsserver.setup({})
+        lspconfig.ts_ls.setup({})
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),

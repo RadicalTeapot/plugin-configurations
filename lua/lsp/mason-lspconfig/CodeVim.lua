@@ -5,7 +5,7 @@ return {
             "lua_ls",
             "powershell_es",
             "omnisharp",
-            "tsserver",
+            "ts_ls",
         },
     },
 }
