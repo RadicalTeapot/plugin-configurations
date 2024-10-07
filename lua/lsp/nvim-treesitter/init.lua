@@ -1,6 +1,5 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    commit = "8ce94cb53741c5038ceac239372cafd16c8b5a85", -- TEMP: use this commit until this https://github.com/nvim-treesitter/nvim-treesitter/pull/7114 is merged
     build = ":TSUpdate",
     -- Disable lazy loading as it might cause some issues with runtime path order when loading query.lua, figure out if it can be avoided
     lazy = false,

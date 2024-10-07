@@ -1,6 +1,5 @@
 return {
     "lukas-reineke/headlines.nvim",
-    enabled = false, -- Re-enable once bug with neovim 0.11.700 is fixed
     dependencies = "nvim-treesitter/nvim-treesitter",
     lazy = true,
     event = { "BufReadPre", "BufNewFile" },
