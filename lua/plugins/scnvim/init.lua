@@ -1,7 +1,7 @@
 local utils = require("plugins.scnvim.utils")
 return {
     "davidgranstrom/scnvim",
-    lazy = true,
+    lazy = false,
     ft = "supercollider",
     opts = {
         sclang = {
@@ -15,6 +15,6 @@ return {
     config = function(_, opts)
         require("scnvim").setup(opts)
         vim.g.scnvim_scdoc = 1 -- Browse docs in Neovim
-        utils.set_autcmd()
+        utils.setup()
     end,
 }
