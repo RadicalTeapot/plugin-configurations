@@ -4,5 +4,10 @@ return {
     event = "VeryLazy",
     opts = {
         globalstatus = true,
+        options = {
+            theme = 'gruvbox',
+            component_separators = {},
+            section_separators = {},
+        }
     },
 }

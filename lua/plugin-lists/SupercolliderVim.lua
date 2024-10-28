@@ -18,7 +18,7 @@ return {
     "plugins.scnvim",
     "plugins.telescope",
     "plugins.which-key",
---     "ui.colorscheme",
+    "ui.gruvbox",
     "ui.dressing",
     "ui.headlines",
     "ui.indent-blanklines",
