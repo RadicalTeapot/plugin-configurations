@@ -12,6 +12,7 @@ return {
             "markdown",
             "markdown_inline",
             "supercollider",
+            "just",
         },
     },
 }
