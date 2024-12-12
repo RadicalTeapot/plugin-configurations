@@ -16,6 +16,8 @@ return {
     "plugins.ollama-nvim",
     "plugins.personal_config",
     "plugins.scnvim",
+    "plugins.telescope-supercollider",
+    "plugins.telescope-scdoc",
     "plugins.telescope",
     "plugins.which-key",
     "ui.gruvbox",

@@ -42,6 +42,8 @@ M.setup = function()
     kset("n", "<leader>st", function()
         sclang.start() -- Same as SCNvimStart
         sclang.poll_server_status()
+        kset("n", "<leader>tsd", function() require('telescope').extensions.supercollider.sc_definitions() end, make_opts("[T]elescope [s]upercollider [d]efinitions"))
+        kset("n", "<leader>tsh", function() require('telescope').extensions.scdoc.scdoc() end, make_opts("[T]elescope [s]upercollider [h]elp"))
     end, make_opts("Supercollider s[t]art sclang"))
     kset("n", "<leader>sp", function()
         sclang.stop() -- Same as SCNvimStop
