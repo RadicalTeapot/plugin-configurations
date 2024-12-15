@@ -38,6 +38,8 @@ M.setup = function()
     -- Language calls
     local sclang = require('scnvim.sclang')
     kset({"i", "n", "x"}, "<F1>", function() sclang.send("s.boot", true) end, make_opts("Supercollider server boot"))
+    kset({"i", "n", "x"}, "<leader>sm", function() sclang.send("s.meter(0, 2)", true) end, make_opts("Supercollider [s]erver [m]eter"))
+    kset({"i", "n", "x"}, "<leader>sn", function() sclang.send("s.plotTree", true) end, make_opts("Supercollider [s]erver [n]ode tree"))
     kset({"i", "n", "x"}, "<F12>", function() sclang.hard_stop() end, make_opts("Supercollider hard stop"))
     kset("n", "<leader>st", function()
         sclang.start() -- Same as SCNvimStart
