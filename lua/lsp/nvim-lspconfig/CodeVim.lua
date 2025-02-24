@@ -27,7 +27,7 @@ return {
             end,
         })
 
-        -- Check https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#omnisharp 
+        -- Check https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#omnisharp
         -- and https://vi.stackexchange.com/questions/43830/how-to-use-omnisharp-c-lsp-with-mason-in-nvim-properly for 
         -- setup instructions
         lspconfig.omnisharp.setup({
@@ -70,11 +70,13 @@ return {
                     IncludePrereleases = true,
                 },
             },
+            root_dir = lspconfig.util.root_pattern("*.sln")
         })
 
         lspconfig.marksman.setup({})
         lspconfig.powershell_es.setup({})
         lspconfig.ts_ls.setup({})
+        lspconfig.zls.setup({})
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),

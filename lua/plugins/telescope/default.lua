@@ -23,7 +23,7 @@ return {
 
         -- Add ability to delete selected buffers from the search results
         -- From here https://medium.com/@jogarcia/delete-buffers-on-telescope-21cc4cf61b63
-        buffer_searcher = function()
+        Buffer_searcher = function()
             builtin.buffers {
                 sort_mru = true, -- Most recently used first
                 ignore_current_buffer = true, -- Don't show current buffer in list
@@ -31,7 +31,7 @@ return {
                 attach_mappings = function(prompt_bufnr, map)
                     local refresh_buffer_searcher = function()
                         actions.close(prompt_bufnr)
-                        vim.schedule(buffer_searcher)
+                        vim.schedule(Buffer_searcher)
                     end
 
                     local delete_highlighted_buffer = function()
@@ -58,6 +58,6 @@ return {
             }
         end
 
-        vim.keymap.set('n', '<leader>tb', buffer_searcher, { desc = "[T]elescope [b]uffers" })
+        vim.keymap.set('n', '<leader>tb', Buffer_searcher, { desc = "[T]elescope [b]uffers" })
     end,
 }

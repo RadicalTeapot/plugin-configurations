@@ -6,6 +6,7 @@ return {
             "powershell_es",
             "omnisharp",
             "ts_ls",
+            "zls",
         },
     },
 }

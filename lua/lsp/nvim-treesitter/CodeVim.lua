@@ -13,6 +13,7 @@ return {
             "markdown_inline",
             "supercollider",
             "just",
+            "zig",
         },
     },
 }
