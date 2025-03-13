@@ -50,12 +50,41 @@ local build_note_metadata = function(relative_note_path)
     }
 end
 
-local function as_wikilink(text)
-    return "[["..text.."]]"
+local function link_to_aliased_index_as_wikilink(index_alias)
+    return "[[index|"..index_alias.."]]"
 end
 
 local function is_valid_para_metadata(metadata)
     return metadata ~= nil and metadata.para_type ~= nil
+end
+
+local function update_telescope()
+    local builtin = require('telescope.builtin')
+
+    -- TODO Add note alias to explicit backlink search (if any)
+    -- it should have the form [[name|alias]]
+    -- local obsidian = require('obsidian')
+
+    Backlink_searcher = function(text)
+        builtin.live_grep({
+            additional_args = {
+                "--hidden",
+                "--ignore-case",
+                "--fixed-strings",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column",
+                "--trim",
+                "-tmd", -- only look at markdown files
+                "--color=never",
+            },
+            default_text=text
+        })
+    end
+
+    vim.keymap.set('n', '<leader>tle', function() Backlink_searcher("[["..vim.fn.expand("%:t:r").."]]") end, { desc = "[T]elescope back[l]ink [e]xplicit" })
+    vim.keymap.set('n', '<leader>tli', function() Backlink_searcher(vim.fn.expand("%:t:r")) end, { desc = "[T]elescope back[l]ink [i]mplicit" })
 end
 
 return {
@@ -95,8 +124,7 @@ return {
                 local path = note.path:relative_to(workspace.path)
                 local metadata = build_note_metadata(path)
                 if is_valid_para_metadata(metadata) then
-                    frontmatter_table["para-type"] = metadata.para_type
-                    frontmatter_table["topic"] = as_wikilink(metadata.topic)
+                    frontmatter_table["topic"] = link_to_aliased_index_as_wikilink(metadata.topic)
                     frontmatter_table["title"] = metadata.title
                 end
             end
@@ -119,4 +147,8 @@ return {
             return frontmatter_table
         end,
     },
+    config = function(_, opts)
+        require("obsidian").setup(opts)
+        update_telescope()
+    end
 }

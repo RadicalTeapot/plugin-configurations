@@ -7,7 +7,6 @@ return {
             { "<leader>tf", builtin.find_files, desc = "[T]elescope find [f]ile" },
             { "<leader>tr", builtin.resume, desc = "[T]elescope [r]esume" },
             { "<leader>tb" },
-            { "<leader>tl" },
             { "<leader>tg", telescope.extensions.live_grep_args.live_grep_args, desc = "[T]elescope live [g]rep" },
             { "<leader>th", builtin.help_tags, desc = "[T]elescope [h]elp tags" },
             { "<leader>tr", builtin.oldfiles, desc = "[T]elescope [r]ecent files" },
@@ -62,25 +61,5 @@ return {
 
         vim.keymap.set('n', '<leader>tb', Buffer_searcher, { desc = "[T]elescope [b]uffers" })
 
-        Backlink_searcher = function(text)
-            builtin.live_grep({
-                additional_args = {
-                    "--hidden",
-                    "--ignore-case",
-                    "--fixed-strings",
-                    "--no-heading",
-                    "--with-filename",
-                    "--line-number",
-                    "--column",
-                    "--trim",
-                    "-tmd", -- only for markdown files, should be moved to obsidian vim config
-                    "--color=never",
-                },
-                default_text=text -- vim.fn.expand("%:t:r")
-            })
-        end
-
-        vim.keymap.set('n', '<leader>tle', function() Backlink_searcher("[["..vim.fn.expand("%:t:r").."]]") end, { desc = "[T]elescope back[l]ink [e]xplicit" })
-        vim.keymap.set('n', '<leader>tli', function() Backlink_searcher(vim.fn.expand("%:t:r")) end, { desc = "[T]elescope back[l]ink [i]mplicit" })
     end,
 }
