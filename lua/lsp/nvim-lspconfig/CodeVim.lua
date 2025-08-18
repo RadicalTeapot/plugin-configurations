@@ -74,7 +74,9 @@ return {
         })
 
         lspconfig.marksman.setup({})
-        lspconfig.powershell_es.setup({})
+        lspconfig.powershell_es.setup({
+            cmd= { "pwsh", "-NoLogo", "-NoProfile", "-Command", vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1" },
+        })
         lspconfig.ts_ls.setup({})
         lspconfig.zls.setup({})
 
