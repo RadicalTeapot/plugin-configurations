@@ -1,10 +1,10 @@
 return {
     opts = {
         ensure_installed = {
-            "marksman",
             "lua_ls",
-            "powershell_es",
+            "marksman",
             "omnisharp",
+            "powershell_es",
             "ts_ls",
             "zls",
         },
