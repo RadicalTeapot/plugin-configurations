@@ -5,6 +5,7 @@ return {
             typescript = { "prettier" },
             markdown = { { "markdownlint", "prettier"  }},
             cs = { "csharpier" },
+            sh = { "shfmt" },
         },
         formatters = {
             prettier = {

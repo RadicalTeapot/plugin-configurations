@@ -4,6 +4,7 @@ return {
             "markdownlint",
             "csharpier",
             "shellcheck",
+            "shfmt",
             "stylua",
             "prettier",
             "zls",
