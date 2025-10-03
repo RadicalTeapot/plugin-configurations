@@ -2,8 +2,7 @@ return {
     -- TODO Configure autocmd using utils (similar to nvim-lint)
     config = function()
         -- Configure LSPs here
-        local lspconfig = require("lspconfig")
-        lspconfig.marksman.setup({})
+        vim.lsp.config('marksman', {})
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),

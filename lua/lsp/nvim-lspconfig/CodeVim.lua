@@ -2,9 +2,7 @@ return {
     -- TODO Configure autocmd using utils (similar to nvim-lint)
     config = function()
         -- Configure LSPs here
-        local lspconfig = require("lspconfig")
-
-        lspconfig.lua_ls.setup({
+        vim.lsp.config('lua_ls', {
             settings = {
                 Lua = {
                     diagnostics = {
@@ -30,7 +28,7 @@ return {
         -- Check https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#omnisharp
         -- and https://vi.stackexchange.com/questions/43830/how-to-use-omnisharp-c-lsp-with-mason-in-nvim-properly for 
         -- setup instructions
-        lspconfig.omnisharp.setup({
+        vim.lsp.config('omnisharp', {
             cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
             settings = {
                 FormattingOptions = {
@@ -70,15 +68,15 @@ return {
                     IncludePrereleases = true,
                 },
             },
-            root_dir = lspconfig.util.root_pattern("*.sln")
+            root_dir = vim.fs.find({ "*.sln", "*.csproj", ".git" }, { upward = true })[1] and vim.fs.dirname(vim.fs.find({ "*.sln", "*.csproj", ".git" }, { upward = true })[1]) or vim.fn.getcwd(),
         })
 
-        lspconfig.marksman.setup({})
-        lspconfig.powershell_es.setup({
+        vim.lsp.config('marksman', {})
+        vim.lsp.config('powershell_es', {
             cmd= { "pwsh", "-NoLogo", "-NoProfile", "-Command", vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1" },
         })
-        lspconfig.ts_ls.setup({})
-        lspconfig.zls.setup({})
+        vim.lsp.config('ts_ls', {})
+        vim.lsp.config('zls', {})
 
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
