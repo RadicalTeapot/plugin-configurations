@@ -29,7 +29,7 @@ return {
         -- and https://vi.stackexchange.com/questions/43830/how-to-use-omnisharp-c-lsp-with-mason-in-nvim-properly for 
         -- setup instructions
         vim.lsp.config('omnisharp', {
-            cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+            cmd = { "omnisharp", "-z", "--hostPID", "12345", "DotNet:enablePackageRestore=false", "--encoding", "utf-8", "--languageserver" },
             settings = {
                 FormattingOptions = {
                     -- Enables support for reading code style, naming convention and analyzer
